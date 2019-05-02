@@ -12,6 +12,7 @@
 		B4F19FA1227A1818008642C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F19F9F227A1818008642C5 /* LaunchScreen.storyboard */; };
 		B4F19FA4227A1818008642C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F19FA3227A1818008642C5 /* main.m */; };
 		B4F19FAC227A45C8008642C5 /* CLNCoolController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F19FAB227A45C8008642C5 /* CLNCoolController.m */; };
+		B4F19FAF227A596B008642C5 /* CLNCoolViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F19FAE227A596B008642C5 /* CLNCoolViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		B4F19FA3227A1818008642C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4F19FAA227A45C8008642C5 /* CLNCoolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLNCoolController.h; sourceTree = "<group>"; };
 		B4F19FAB227A45C8008642C5 /* CLNCoolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLNCoolController.m; sourceTree = "<group>"; };
+		B4F19FAD227A596B008642C5 /* CLNCoolViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLNCoolViewCell.h; sourceTree = "<group>"; };
+		B4F19FAE227A596B008642C5 /* CLNCoolViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLNCoolViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 				B4F19F95227A1816008642C5 /* CLNAppDelegate.m */,
 				B4F19FAA227A45C8008642C5 /* CLNCoolController.h */,
 				B4F19FAB227A45C8008642C5 /* CLNCoolController.m */,
+				B4F19FAD227A596B008642C5 /* CLNCoolViewCell.h */,
+				B4F19FAE227A596B008642C5 /* CLNCoolViewCell.m */,
 				B4F19F9D227A1818008642C5 /* Assets.xcassets */,
 				B4F19F9F227A1818008642C5 /* LaunchScreen.storyboard */,
 				B4F19FA2227A1818008642C5 /* Info.plist */,
@@ -138,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4F19FAC227A45C8008642C5 /* CLNCoolController.m in Sources */,
+				B4F19FAF227A596B008642C5 /* CLNCoolViewCell.m in Sources */,
 				B4F19FA4227A1818008642C5 /* main.m in Sources */,
 				B4F19F96227A1816008642C5 /* CLNAppDelegate.m in Sources */,
 			);
