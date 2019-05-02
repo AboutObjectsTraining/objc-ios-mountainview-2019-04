@@ -4,25 +4,77 @@
 #import "CLNCoolController.h"
 #import "CLNCoolViewCell.h"
 
+@interface CLNCoolController () <UITextFieldDelegate>
+
+@property (weak, nonatomic) UITextField *textField;
+@property (weak, nonatomic) UIView *contentView;
+
+@end
+
 @implementation CLNCoolController
 
+- (void)addCell {
+    NSLog(@"In %s, text is %@", __func__, self.textField.text);
+    CLNCoolViewCell *newCell = [[CLNCoolViewCell alloc] init];
+    newCell.text = self.textField.text;
+    newCell.backgroundColor = UIColor.brownColor;
+    [self.contentView addSubview:newCell];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    NSLog(@"In %s", __func__);
+    [textField resignFirstResponder];
+    return YES;
+}
+
 - (void)loadView {
-    self.view = [[UIView alloc] initWithFrame:CGRectZero];
+    self.view = [[UIView alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.view.backgroundColor = UIColor.brownColor;
     
-    CLNCoolViewCell *subview1 = [[CLNCoolViewCell alloc] initWithFrame:CGRectMake(20, 60, 200, 40)];
-    CLNCoolViewCell *subview2 = [[CLNCoolViewCell alloc] initWithFrame:CGRectMake(40, 120, 200, 40)];
-    [self.view addSubview:subview1];
-    [self.view addSubview:subview2];
+    CGRect accessoryRect;
+    CGRect contentRect;
+    CGRectDivide(self.view.frame, &accessoryRect, &contentRect, 90, CGRectMinYEdge);
+    UIView *accessoryView = [[UIView alloc] initWithFrame:accessoryRect];
+    UIView *contentView = [[UIView alloc] initWithFrame:contentRect];
+    [self.view addSubview:accessoryView];
+    [self.view addSubview:contentView];
     
-    subview1.text = @"CoolViewCells rock! 🎉😍";
-    subview2.text = @"Hello World! 🌎🌏";
+    self.contentView = contentView;
+    self.contentView.clipsToBounds = YES;
     
-    [subview1 sizeToFit];
-    [subview2 sizeToFit];    
+    accessoryView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.7];
+    contentView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
     
-    subview1.backgroundColor = UIColor.purpleColor;
-    subview2.backgroundColor = UIColor.orangeColor;
+    // Controls
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(15, 45, 240, 30)];
+    [accessoryView addSubview:textField];
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.placeholder = @"Enter a label";
+    
+    self.textField = textField;
+    self.textField.delegate = self;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle:@"Add" forState:UIControlStateNormal];
+    [button sizeToFit];
+    [accessoryView addSubview:button];
+    button.frame = CGRectOffset(button.frame, 270, 45);
+    
+    [button addTarget:self action:@selector(addCell) forControlEvents:UIControlEventTouchUpInside];
+    
+    // Cells
+    
+    CLNCoolViewCell *cell1 = [[CLNCoolViewCell alloc] initWithFrame:CGRectMake(20, 30, 200, 40)];
+    CLNCoolViewCell *cell2 = [[CLNCoolViewCell alloc] initWithFrame:CGRectMake(40, 90, 200, 40)];
+    [contentView addSubview:cell1];
+    [contentView addSubview:cell2];
+    
+    cell1.text = @"CoolViewCells rock! 🎉😍";
+    cell2.text = @"Hello World! 🌎🌏";
+    
+    cell1.backgroundColor = UIColor.purpleColor;
+    cell2.backgroundColor = UIColor.orangeColor;
 }
 
 @end

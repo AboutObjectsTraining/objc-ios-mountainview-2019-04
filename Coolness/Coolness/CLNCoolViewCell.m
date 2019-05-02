@@ -20,6 +20,33 @@ const UIEdgeInsets CLNTextInsets = {
 
 @implementation CLNCoolViewCell
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (!(self = [super initWithFrame:frame])) return nil;
+    
+    [self configureLayer];
+    [self configureGestureRecognizers];
+    
+    return self;
+}
+
+- (void)configureGestureRecognizers {
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(bounce)];
+    recognizer.numberOfTapsRequired = 2;
+    [self addGestureRecognizer:recognizer];
+}
+
+- (void)configureLayer {
+    self.layer.borderWidth = 3;
+    self.layer.borderColor = UIColor.whiteColor.CGColor;
+    self.layer.cornerRadius = 8;
+    self.layer.masksToBounds = YES;
+}
+
+
+// FIXME: Add the other designated initializer
+
 + (NSDictionary<NSAttributedStringKey, id> *)textAttributes {
     return @{ NSFontAttributeName : [UIFont boldSystemFontOfSize:18],
               NSForegroundColorAttributeName : UIColor.whiteColor };
@@ -29,6 +56,49 @@ const UIEdgeInsets CLNTextInsets = {
     _highlighted = highlighted;
     self.alpha = highlighted ? 0.5 : 1.0;
 }
+
+- (void)setText:(NSString *)text {
+    _text = [text copy];
+    [self sizeToFit];
+}
+
+// MARK: - Animation
+
+CGSize CLNDefaultBounceSize = {120, 240};
+
+- (void)bounce {
+    NSLog(@"In %s", __func__);
+    [self animateBounceWithDuration:1.0 size:CLNDefaultBounceSize];
+}
+
+- (void)configureBounceWithSize:(CGSize)size {
+    [UIView setAnimationRepeatCount:3.5];
+    [UIView setAnimationRepeatAutoreverses:YES];
+    CGAffineTransform translation = CGAffineTransformMakeTranslation(size.width, size.height);
+    self.transform = CGAffineTransformRotate(translation, M_PI_2);
+}
+
+- (void)configureFinishBounceWithDuration:(NSTimeInterval)duration {
+    // TODO: strong/weak dance.
+    [UIView animateWithDuration:duration animations:^{
+        self.transform = CGAffineTransformIdentity;
+    }];
+}
+
+- (void)animateBounceWithDuration:(NSTimeInterval)duration size:(CGSize)size {
+    typeof(self) __weak weakSelf = self;
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         typeof(weakSelf) strongSelf = weakSelf;
+                         [strongSelf configureBounceWithSize:size];
+                     }
+                     completion:^(BOOL finished) {
+                         typeof(weakSelf) strongSelf = weakSelf;
+                         [strongSelf configureFinishBounceWithDuration:duration];
+                     }];
+}
+
+
 
 // MARK: - Drawing and Resizing
 
