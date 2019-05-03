@@ -12,8 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CLNCoolController">
             <connections>
-                <outlet property="contentView" destination="MRX-0g-0KP" id="QlO-hW-Dbg"/>
-                <outlet property="textField" destination="jw1-Lz-S3v" id="BSw-Y3-MIh"/>
                 <outlet property="view" destination="tdz-FE-51m" id="Piw-BN-geb"/>
             </connections>
         </placeholder>
@@ -22,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-Mx-FKQ" userLabel="Accessory View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-Mx-FKQ" userLabel="Accessory View" customClass="CLNAccessoryView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a label" textAlignment="natural" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-Lz-S3v">
@@ -31,7 +29,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <connections>
-                                <outlet property="delegate" destination="-1" id="5ww-06-afB"/>
+                                <outlet property="delegate" destination="cc7-Mx-FKQ" id="gef-Ma-K2u"/>
                             </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lF8-QQ-5Te">
@@ -41,7 +39,7 @@
                             </constraints>
                             <state key="normal" title="Add"/>
                             <connections>
-                                <action selector="addCell" destination="-1" eventType="touchUpInside" id="ycU-U6-eVo"/>
+                                <action selector="addCell" destination="MRX-0g-0KP" eventType="touchUpInside" id="TVK-Yb-GK9"/>
                             </connections>
                         </button>
                     </subviews>
@@ -57,7 +55,7 @@
                         <constraint firstItem="jw1-Lz-S3v" firstAttribute="leading" secondItem="cc7-Mx-FKQ" secondAttribute="leading" constant="15" id="uCU-38-1Zp"/>
                     </constraints>
                 </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRX-0g-0KP" userLabel="Content View">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRX-0g-0KP" userLabel="Content View" customClass="CLNCoolView">
                     <rect key="frame" x="0.0" y="90" width="375" height="722"/>
                     <subviews>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sG0-xh-3jm" customClass="CLNCoolViewCell">
@@ -78,6 +76,9 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="textField" destination="jw1-Lz-S3v" id="0xs-Gh-XeJ"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

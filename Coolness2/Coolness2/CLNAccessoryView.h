@@ -1,8 +1,12 @@
 // Copyright (C) 2019 About Objects, Inc. All Rights Reserved.
 // See LICENSE.txt for this project's licensing information.
 
-#import "CLNCoolController.h"
+#import <UIKit/UIKit.h>
 
-@implementation CLNCoolController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface CLNAccessoryView : UIView
 
 @end
+
+NS_ASSUME_NONNULL_END

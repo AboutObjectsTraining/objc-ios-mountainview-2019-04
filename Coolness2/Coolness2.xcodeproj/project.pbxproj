@@ -14,6 +14,8 @@
 		B4F19FE2227BBBD9008642C5 /* CLNCoolViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F19FDD227BBBD9008642C5 /* CLNCoolViewCell.m */; };
 		B4F19FE3227BBBD9008642C5 /* CLNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F19FE0227BBBD9008642C5 /* CLNAppDelegate.m */; };
 		B4F19FE5227BBCF8008642C5 /* CoolStuff.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4F19FE4227BBCF8008642C5 /* CoolStuff.xib */; };
+		B4F19FE8227CC332008642C5 /* CLNCoolView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F19FE7227CC332008642C5 /* CLNCoolView.m */; };
+		B4F19FEB227CC847008642C5 /* CLNAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F19FEA227CC847008642C5 /* CLNAccessoryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		B4F19FDF227BBBD9008642C5 /* CLNCoolController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNCoolController.h; sourceTree = "<group>"; };
 		B4F19FE0227BBBD9008642C5 /* CLNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNAppDelegate.m; sourceTree = "<group>"; };
 		B4F19FE4227BBCF8008642C5 /* CoolStuff.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoolStuff.xib; sourceTree = "<group>"; };
+		B4F19FE6227CC332008642C5 /* CLNCoolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLNCoolView.h; sourceTree = "<group>"; };
+		B4F19FE7227CC332008642C5 /* CLNCoolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLNCoolView.m; sourceTree = "<group>"; };
+		B4F19FE9227CC847008642C5 /* CLNAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLNAccessoryView.h; sourceTree = "<group>"; };
+		B4F19FEA227CC847008642C5 /* CLNAccessoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLNAccessoryView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,10 @@
 				B4F19FE0227BBBD9008642C5 /* CLNAppDelegate.m */,
 				B4F19FDF227BBBD9008642C5 /* CLNCoolController.h */,
 				B4F19FDC227BBBD9008642C5 /* CLNCoolController.m */,
+				B4F19FE9227CC847008642C5 /* CLNAccessoryView.h */,
+				B4F19FEA227CC847008642C5 /* CLNAccessoryView.m */,
+				B4F19FE6227CC332008642C5 /* CLNCoolView.h */,
+				B4F19FE7227CC332008642C5 /* CLNCoolView.m */,
 				B4F19FDB227BBBD9008642C5 /* CLNCoolViewCell.h */,
 				B4F19FDD227BBBD9008642C5 /* CLNCoolViewCell.m */,
 				B4F19FC5227BBA65008642C5 /* Assets.xcassets */,
@@ -146,10 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F19FE8227CC332008642C5 /* CLNCoolView.m in Sources */,
 				B4F19FE3227BBBD9008642C5 /* CLNAppDelegate.m in Sources */,
 				B4F19FE1227BBBD9008642C5 /* CLNCoolController.m in Sources */,
 				B4F19FE2227BBBD9008642C5 /* CLNCoolViewCell.m in Sources */,
 				B4F19FCC227BBA65008642C5 /* main.m in Sources */,
+				B4F19FEB227CC847008642C5 /* CLNAccessoryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
