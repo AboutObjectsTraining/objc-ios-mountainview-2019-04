@@ -22,13 +22,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-Mx-FKQ" userLabel="Accessory View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-Mx-FKQ" userLabel="Accessory View">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a label" textAlignment="natural" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-Lz-S3v">
-                            <rect key="frame" x="8" y="52" width="321" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a label" textAlignment="natural" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-Lz-S3v">
+                            <rect key="frame" x="15" y="52" width="307" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -36,9 +34,11 @@
                                 <outlet property="delegate" destination="-1" id="5ww-06-afB"/>
                             </connections>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lF8-QQ-5Te">
-                            <rect key="frame" x="337" y="52" width="30" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lF8-QQ-5Te">
+                            <rect key="frame" x="330" y="52" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="bJF-lN-3Qu"/>
+                            </constraints>
                             <state key="normal" title="Add"/>
                             <connections>
                                 <action selector="addCell" destination="-1" eventType="touchUpInside" id="ycU-U6-eVo"/>
@@ -46,10 +46,19 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="lF8-QQ-5Te" secondAttribute="bottom" constant="8" id="3Nc-Zd-O3q"/>
+                        <constraint firstItem="lF8-QQ-5Te" firstAttribute="leading" secondItem="jw1-Lz-S3v" secondAttribute="trailing" constant="8" id="8iy-HA-fee"/>
+                        <constraint firstItem="jw1-Lz-S3v" firstAttribute="top" secondItem="cc7-Mx-FKQ" secondAttribute="top" constant="52" id="Hcv-xW-ymd"/>
+                        <constraint firstItem="lF8-QQ-5Te" firstAttribute="top" secondItem="cc7-Mx-FKQ" secondAttribute="top" constant="52" id="INF-2Z-1ZK"/>
+                        <constraint firstAttribute="height" constant="90" id="TWf-oC-XBM"/>
+                        <constraint firstAttribute="bottom" secondItem="jw1-Lz-S3v" secondAttribute="bottom" constant="8" id="X39-k3-ZKk"/>
+                        <constraint firstAttribute="trailing" secondItem="lF8-QQ-5Te" secondAttribute="trailing" constant="15" id="sfV-lN-Rqg"/>
+                        <constraint firstItem="jw1-Lz-S3v" firstAttribute="leading" secondItem="cc7-Mx-FKQ" secondAttribute="leading" constant="15" id="uCU-38-1Zp"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MRX-0g-0KP" userLabel="Content View">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRX-0g-0KP" userLabel="Content View">
                     <rect key="frame" x="0.0" y="90" width="375" height="722"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sG0-xh-3jm" customClass="CLNCoolViewCell">
                             <rect key="frame" x="24" y="37" width="198" height="41"/>
@@ -72,6 +81,15 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MRX-0g-0KP" firstAttribute="leading" secondItem="ckr-Nv-c8R" secondAttribute="leading" id="04f-0D-kTo"/>
+                <constraint firstItem="MRX-0g-0KP" firstAttribute="top" secondItem="cc7-Mx-FKQ" secondAttribute="bottom" id="J9G-Cd-7dl"/>
+                <constraint firstItem="cc7-Mx-FKQ" firstAttribute="trailing" secondItem="ckr-Nv-c8R" secondAttribute="trailing" id="LQ9-DT-CuK"/>
+                <constraint firstItem="cc7-Mx-FKQ" firstAttribute="top" secondItem="tdz-FE-51m" secondAttribute="top" id="N3g-bn-9V3"/>
+                <constraint firstAttribute="bottom" secondItem="MRX-0g-0KP" secondAttribute="bottom" id="bep-8n-Tf4"/>
+                <constraint firstItem="MRX-0g-0KP" firstAttribute="trailing" secondItem="ckr-Nv-c8R" secondAttribute="trailing" id="fVb-Cc-68a"/>
+                <constraint firstItem="cc7-Mx-FKQ" firstAttribute="leading" secondItem="ckr-Nv-c8R" secondAttribute="leading" id="oda-QN-tes"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ckr-Nv-c8R"/>
             <point key="canvasLocation" x="101.59999999999999" y="-460.34482758620692"/>
         </view>
